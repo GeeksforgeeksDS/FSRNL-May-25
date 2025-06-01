@@ -1,0 +1,4 @@
+1. Read about 
+    - Table elements
+    - <i> vs <em>
+    - Revise the elements which have discussed in the class.
