@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    background-color: #023e8a;
+    padding: 24px;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li{
+    display: inline-block;
+    margin-right: 20px ;
+    font-size: 1.5rem;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+#signup{
+    position: absolute;
+    right: 80px;
+}
