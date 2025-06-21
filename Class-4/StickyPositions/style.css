@@ -1,0 +1,8 @@
+li{
+    border: 2px solid black;
+    background-color: palevioletred;
+    /* 1rem = 16px */
+    margin-bottom: 1rem;
+    position: sticky;
+    top: 10px;
+}

@@ -1,0 +1,38 @@
+p{
+    /* dimentions: width & height */
+
+    width: 400px;
+    height: 200px;
+
+    /* border */
+    border: 3px solid black;
+
+
+    /* padding */
+    /* padding: 20px; */
+
+    /* padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    padding-left: 40px; */
+
+    /* padding: 10px 20px 30px 40px; */
+
+    padding: 30px 40px;
+
+
+    /* margin */
+
+    /* margin: 80px; */
+    /* margin-top: 10px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    margin-left: 40px; */
+
+    /* margin: 30px 40px; */
+
+    margin: 30px auto;
+
+
+    box-sizing: border-box;
+}
