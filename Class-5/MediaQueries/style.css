@@ -1,0 +1,18 @@
+@media screen and (width<=600px){
+    h1{
+        color: orange;
+    }
+    p{
+        color: purple;
+    }
+}
+
+@media screen and (width<=400px){
+    h1{
+        color: green;
+        font-size: 5rem;
+    }
+    p{
+        color: red;
+    }
+}
