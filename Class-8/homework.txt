@@ -1,0 +1,6 @@
+1. Learn about slice and splice array methods.
+
+
+2. D.S 
+    i. String, Arrays, Objects
+    ii. Map, Set - Homeworks
