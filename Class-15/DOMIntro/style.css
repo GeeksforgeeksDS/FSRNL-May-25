@@ -1,0 +1,8 @@
+.fav-movie{
+    font-weight: bold;
+    color: palevioletred;
+}
+
+.mark-completed{
+    text-decoration: line-through;
+}
