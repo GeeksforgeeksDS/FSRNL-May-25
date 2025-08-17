@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Task Tracker App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <style>
+        ul li span i:hover{
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <section style="width: 400px;" class="mx-auto mt-5">
+        <h1><i class="bi bi-calendar-check me-3"></i>Task Tracker App</h1>
+        <form class="mb-3">
+            <input class="form-control mb-3" id="task-inp" type="text" placeholder="Add Tasks">
+            <button class="btn btn-sm btn-dark" id="add-btn" type="submit">Add+</button>
+        </form>
+        <ul class="list-group" id="list">
+           
+        </ul>
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
