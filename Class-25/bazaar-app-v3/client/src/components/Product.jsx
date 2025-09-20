@@ -19,7 +19,7 @@ const Product = (props) => {
                     {props.title}
                 </Typography>
                 <Typography gutterBottom variant="h5" component="div">
-                    {props.price}
+                    $ {props.price}
                 </Typography>
                 <Typography variant="body2" sx={{ color: 'text.secondary' }}>
                     {props.description}

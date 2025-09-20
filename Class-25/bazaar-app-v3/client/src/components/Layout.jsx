@@ -8,7 +8,7 @@ const Layout = (props) => {
           <header>
               <Header/>
           </header>
-          <Box component="main" mt={10}>
+          <Box component="main" sx={{ margin:'100px auto', width:'80vw'}}>
               {props.children}
           </Box>
           <footer>

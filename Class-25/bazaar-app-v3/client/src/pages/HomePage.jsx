@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios';
 import Product from '../components/Product';
+import ProductList from '../components/ProductList';
 
 const HomePage = () => {
 
@@ -18,16 +19,7 @@ const HomePage = () => {
     return (
         <div>
             {products.length === 0 && <p>Loading Products</p>}
-            {products.length>0 && products.map((product) => {
-                    return <Product
-                        key={ product._id}
-                        title={product.title}
-                        price={product.price}
-                        description={product.description}
-                        image={product.image}
-                    />
-                })
-            }
+            {products.length > 0 && <ProductList products={products} />}
         </div>
     )
 }
