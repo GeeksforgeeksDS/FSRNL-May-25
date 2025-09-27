@@ -7,6 +7,7 @@ import Review from './models/Review.js';
 import User from './models/User.js';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
+import { isLoggedIn } from './middleware/auth.js'; 
 
 const JWT_SECRET = "FD86118B3687B5773B193B215274F";
 
@@ -100,7 +101,7 @@ app.post('/register', async (req, res) => {
 });
 
 // Login Route
-app.post('/login', async(req, res) => {
+app.post('/login', async (req, res) => {
     const { username, password } = req.body;
 
     // checks if user with this username exists in the database.
@@ -121,8 +122,16 @@ app.post('/login', async(req, res) => {
     const token = jwt.sign({ userId: user._id }, JWT_SECRET);
 
     res.status(200).json({ token });
-})
+});
 
+app.get('/profile', isLoggedIn, async(req, res) => {
+    const { userId } = req;
+    const user = await User.findById(userId);
+    if (!user) {
+        throw new BadRequestError('Invalid UserId');
+    }
+    res.json(user);;
+})
 
 
 

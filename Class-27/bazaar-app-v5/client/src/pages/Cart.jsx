@@ -5,7 +5,6 @@ const Cart = () => {
 
     const context = useContext(UserContext);
 
-    console.log(context);
 
     return (
       <div>

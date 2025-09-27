@@ -15,12 +15,16 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { NavLink } from 'react-router';
+import { useContext } from 'react';
+import UserContext from '../store/user-context';
 
 const drawerWidth = 240;
 
 function Header(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
+
+    const { isAuthenticated } = useContext(UserContext);
 
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
@@ -39,17 +43,21 @@ function Header(props) {
                         <ListItemText primary="Home" />
                     </ListItemButton>
                 </ListItem>
-                <ListItem disablePadding>
+                {isAuthenticated && <ListItem disablePadding>
                     <ListItemButton component={NavLink} to="/cart" sx={{ textAlign: 'center' }}>
                         <ListItemText primary="Cart" />
                     </ListItemButton>
-                </ListItem>
-                <ListItem disablePadding>
+                </ListItem>}
+                {!isAuthenticated && <ListItem disablePadding>
                     <ListItemButton component={NavLink} to="/register" sx={{ textAlign: 'center' }}>
                         <ListItemText primary="SignUp" />
                     </ListItemButton>
-                </ListItem>
-
+                </ListItem>}
+                {isAuthenticated && <ListItem disablePadding>
+                    <ListItemButton component={NavLink} to="/logout" sx={{ textAlign: 'center' }}>
+                        <ListItemText primary="Logout" />
+                    </ListItemButton>
+                </ListItem>}
             </List>
         </Box>
     );
@@ -59,7 +67,7 @@ function Header(props) {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar component="nav">
+            <AppBar component="nav" color={`${isAuthenticated ? 'secondary': 'primary'}`}>
                 <Toolbar>
                     <IconButton
                         color="inherit"
@@ -81,13 +89,15 @@ function Header(props) {
                         <Button sx={{ color: '#fff' }} component={NavLink} to="/">
                             Home
                         </Button>
-                        <Button sx={{ color: '#fff' }} component={NavLink} to="/cart">
+                        {isAuthenticated && <Button sx={{ color: '#fff' }} component={NavLink} to="/cart">
                             Cart
-                        </Button>
-                        <Button sx={{ color: '#fff' }} component={NavLink} to="/register">
+                        </Button>}
+                        {!isAuthenticated && <Button sx={{ color: '#fff' }} component={NavLink} to="/register">
                             SignUp
-                        </Button>
-
+                        </Button>}
+                        {isAuthenticated && <Button sx={{ color: '#fff' }} component={NavLink} to="/logout">
+                            Logout
+                        </Button>}
                     </Box>
                 </Toolbar>
             </AppBar>

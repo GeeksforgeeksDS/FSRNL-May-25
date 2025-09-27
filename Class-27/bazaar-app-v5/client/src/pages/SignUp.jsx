@@ -9,6 +9,7 @@ import Container from '@mui/material/Container';
 import { RadioGroup, FormControlLabel, Radio } from '@mui/material';
 import { useRef, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router';
 
 const SignUp = () => {
 
@@ -101,6 +102,7 @@ const SignUp = () => {
                     >
                         Register
                     </Button>
+                    <Typography component={Link} to="/login">Already have an account ? Login</Typography>
                 </Box>
             </Box>
         </Container>
